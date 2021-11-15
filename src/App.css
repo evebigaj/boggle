@@ -1,0 +1,170 @@
+* {
+  font-family: Helvetica;
+  text-transform: uppercase;
+  color: black;
+  font-size: 20px;
+}
+
+body {
+  background-color: rgba(172, 99, 16, 0.7);
+}
+
+#main {
+  display: grid;
+  grid-template: repeat(2, 40vh) 2vh repeat(3, 3vh) / repeat(2, 40vh) 200px;
+  justify-content: center;
+  margin-top:10px;
+}
+
+#board {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 5vh;
+  border-radius: 7%;
+  background-color: rgb(22, 22, 177);
+}
+
+.letter-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.8%;
+  width: 20%;
+  height: 20%;
+  position: relative;
+  border: 0.8vh solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15%;
+  background-color: rgba(235, 228, 195);
+}
+
+.letter{
+  font-family: Helvetica;
+  font-size: 3.5em;
+  text-transform: none;
+  text-decoration: none;
+}
+
+
+#bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 50px);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 7;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+
+#form-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start:2;
+   align-self: center;
+  justify-self: center;  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display:none;
+}
+
+input{border-radius:10px;}
+
+
+#submit {
+  display: none;
+}
+
+
+#reset {
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 550;
+  background-color: rgb(255, 123, 0);
+  border: 0.5vh solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  height:7vh;
+  margin:1vh;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  justify-self: center;
+}
+
+#sidebar {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  overflow: scroll;
+  background-color: rgba(235, 228, 195, 0.5);
+  border: 2px solid;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.5);
+ 
+}
+
+h1 {
+  text-decoration: underline;
+}
+o 
+
+#score {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  text-align: center;
+}
+
+#scorecount {
+  margin: auto;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#words {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  align-self: center;
+  justify-self: center;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  font-weight: bold;
+}
+
+#word{
+  width: 40vh;
+  height: 6vh;
+  margin:3vh;
+  padding: 0;
+  background-color: rgba(235, 228, 195);
+}
+
+
+
+
