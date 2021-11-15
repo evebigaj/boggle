@@ -12,6 +12,7 @@ import {boggleAlphabet, initialBoard} from './utils/board'
 import {existsStringPath} from './utils/wordFinder'
 import countPoints from './utils/scoreCounter'
 
+//you'll need to get your own key from https://dictionaryapi.com/products/api-collegiate-dictionary 
 import {key} from './private/key'
 
 
