@@ -45,8 +45,8 @@ const App = () => {
     e.preventDefault();
     if(word.length >2 && existsStringPath(word.toUpperCase(), board) 
     && !words.includes(word.toUpperCase())){
-    const dictionaryResponse = fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`).
-    then(
+    const dictionaryResponse = fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`)
+    .then(
     response => {
     if(response.ok){
         return response.json()

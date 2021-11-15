@@ -4,7 +4,7 @@ function stringPaths(string, board){
 else{return x}}));
     string = string.replace('QU','Q');
     let results = []
-       if(string.length==1){
+       if(string.length===1){
         //find letter going row by row,
         //replacing the letters we've already found with 0:
         for(let rowIndex=0; rowIndex<4;rowIndex++){ 
@@ -13,7 +13,7 @@ else{return x}}));
             let modifiedRow = board[rowIndex]
             while(stringIndex !== -1){
                stringIndex = modifiedRow.findIndex(x => x===letter);
-                if(stringIndex !=-1){
+                if(stringIndex !==-1){
                 results.push([[rowIndex,stringIndex]])}
                 //replacing the letters we've already found with 0:
                 modifiedRow = modifiedRow.map((x,index) => {if(index === stringIndex){
@@ -37,7 +37,7 @@ else{return x}}));
                 for(let m=-1; m<=1; m++){
                     if(i+m>=0&&i+m<4&&j+n>=0&&j+n<4){
                         const isLetterLocation = board[i+m][j+n] === string.slice(-1);
-                        const notInPreviousPath = previousPath.findIndex(x=> x[0]===i+m&&x[1]===j+n) ==-1;
+                        const notInPreviousPath = previousPath.findIndex(x=> x[0]===i+m&&x[1]===j+n) === -1;
                     let availableSteps = []
                     if( isLetterLocation && notInPreviousPath){
                         availableSteps.push([i+m, j+n])

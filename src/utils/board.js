@@ -1,7 +1,7 @@
 const alpha = Array.from(Array(26)).map((e, i) => i + 65);
 const alphabet = alpha.map((x) => String.fromCharCode(x));
 export const boggleAlphabet = alphabet.map(x=> {
-  if(x=='Q'){return 'Qu'}
+  if(x==='Q'){return 'Qu'}
 else{return x}} )
 
 export let initialBoard = []
