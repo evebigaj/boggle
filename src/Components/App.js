@@ -1,3 +1,4 @@
+
 import {React, useState} from 'react'
 import ReactDom from 'react-dom'
 import './App.css';
@@ -46,7 +47,7 @@ const App = () => {
     e.preventDefault();
     if(word.length >2 && existsStringPath(word.toUpperCase(), board) 
     && !words.includes(word.toUpperCase())){
-    const dictionaryResponse = fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`)
+    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`)
     .then(
     response => {
     if(response.ok){
@@ -54,7 +55,12 @@ const App = () => {
     }
 }
 ).then( 
-    data => {if(typeof data[0] === "object"){
+    data => {
+      //for some non-existent words, 
+      //Merriam-Webster API returns array of words you might have meant
+      // so this conditional rules out that possibility
+      //because there typeof data[0]==="string"
+      if(typeof data[0] === "object"){
     return true}
       else{
     return false}
@@ -62,17 +68,19 @@ const App = () => {
 ).then(truthValue => {if(truthValue ===true){
 words.push(word.toUpperCase());
       setWords(words);
-      setPoints(countPoints(words))
-}}).catch(error => Promise.reject() )
+      setPoints(countPoints(words));
+}}).catch(error => Promise.reject() );
+
+setWord('')}
 
 
-if(dictionaryResponse === true){ 
-  words.push(word.toUpperCase());
-      setWords(words);
-      setPoints(countPoints(words))
-    }}
-    setWord('')
-    };
+// if(dictionaryResponse === true){ 
+//   words.push(word.toUpperCase());
+//       setWords(words);
+//       setPoints(countPoints(words))
+//     }}
+//     setWord('')
+};
 
   return <>
   <div id="main">
