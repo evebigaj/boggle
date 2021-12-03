@@ -6,7 +6,10 @@
 }
 
 body {
-  background-color: rgba(172, 99, 16, 0.7);
+  background-color: #e2b843;
+  /* #ffcc08; */
+  color: #29241e
+  /* #f2d857 */
 }
 
 #main {
@@ -27,7 +30,9 @@ body {
   align-content: center;
   margin: 5vh;
   border-radius: 7%;
-  background-color: rgb(22, 22, 177);
+  background-color: #103391;
+  /* #1b3da6 */
+   /* rgb(22, 22, 177); */
 }
 
 .letter-box {
@@ -41,7 +46,9 @@ body {
   border: 0.8vh solid;
   border-color: rgba(0, 0, 0, 0.2);
   border-radius: 15%;
-  background-color: rgba(235, 228, 195);
+  background-color: #fff9d6;
+  /* #62abd9; */
+  /* #fefcbf; */
 }
 
 .letter{
@@ -117,7 +124,8 @@ input{border-radius:10px;}
   text-align: center;
   justify-content: center;
   overflow: scroll;
-  background-color: rgba(235, 228, 195, 0.5);
+  background-color: #fff9d680;
+  /* rgba(235, 228, 195, 0.5); */
   border: 2px solid;
   border-radius: 15px;
   border-color: rgba(0, 0, 0, 0.5);
