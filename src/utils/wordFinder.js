@@ -19,30 +19,34 @@ function stringPaths(string, board){
            //next step: isn't there a cleaner method for this?
            //but first: commit changes
             //we find the letter going row by row,
+            //and push its coordinates to result
             //replacing the letters we've already found with 0:
             for(let rowIndex=0; rowIndex<4;rowIndex++){ 
             //just so we remember we're looking for a single letter:
                 const letter = string
-                let stringIndex = 0
+                let letterIndex = 0
                 let modifiedRow = board[rowIndex]
-                while(stringIndex !== -1){
-               stringIndex = modifiedRow.findIndex(x => x===letter);
-                if(stringIndex !==-1){
-                results.push([[rowIndex,stringIndex]])}
+
+                while(letterIndex !== -1){
+               letterIndex = modifiedRow.indexOf(letter);
+                if(letterIndex !==-1){
+                results.push([[rowIndex,letterIndex]])}
                 //replacing the letters we've already found with 0:
-                modifiedRow = modifiedRow.map((x,index) => {if(index === stringIndex){
+                modifiedRow = modifiedRow.map((x,index) => {if(index === letterIndex){
                     return 0
                 }
             else{return x}})
         }}}
-    
-    else{ 
-        let previousSubstring = string.slice(0,-1);
-        let previousPaths = stringPaths(previousSubstring, board);
-        //search for last letter 
-        //in all boxes adjacent to previous letter
-        //throw out the ones in previous path
-        //and the ones outside the board:
+        //recursive step:
+        else{ 
+            let previousSubstring = string.slice(0,-1);
+            let previousPaths = stringPaths(previousSubstring, board);
+            //for each previous path,
+            //search for last letter of string
+            //in all boxes adjacent to location of penultimate letter 
+            //(i.e. adjacent to last location in previous path)
+            //throw out the ones in previous path
+            //and the ones outside the board:
         for(let previousPath of previousPaths){
             const previousLetterLocation = 
             previousPath[previousPath.length -1];
