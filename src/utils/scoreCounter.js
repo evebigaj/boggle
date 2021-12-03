@@ -1,4 +1,4 @@
-const countPoints = array =>
+export const countPoints = array =>
 { 
     let total = 0
     for(let string of array){
@@ -21,5 +21,4 @@ const countPoints = array =>
 }
 return total}
 
-export default countPoints
 

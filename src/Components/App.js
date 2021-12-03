@@ -1,21 +1,17 @@
-
 import {React, useState} from 'react'
 import ReactDom from 'react-dom'
 import './App.css';
 
 import Board from './Board'
 import Reset from './Reset'
-import Score from './Score.js'
+import Score from './Score'
 import Words from './Words'
 import Form from './Form'
 
 import {boggleAlphabet, initialBoard} from '../utils/board'
 import {asyncFetchWord} from '../utils/dictionaryFetcher'
-import countPoints from '../utils/scoreCounter'
+import {countPoints} from '../utils/scoreCounter'
 import { existsStringPath } from '../utils/wordFinder';
-
-
-
 
 
 const App = () => {
@@ -40,31 +36,22 @@ const App = () => {
     setBoard(newBoard);
     setWords([]);
     setPoints(0);
-}
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
-  if(word.length >2 && existsStringPath(word.toUpperCase(), board) 
-  && !words.includes(word.toUpperCase())){
-   asyncFetchWord(word)
+    if(word.length >2 && existsStringPath(word.toUpperCase(), board) 
+    && !words.includes(word.toUpperCase())){
+    asyncFetchWord(word)
    .then(truthValue => {
      if(truthValue === true){
-words.push(word.toUpperCase());
+      words.push(word.toUpperCase());
       setWords(words);
       setPoints(countPoints(words));
-}})
-.catch(error => Promise.reject())};
+    }})
+    .catch(error => Promise.reject())};
 
-setWord('')}
-
-
-// if(dictionaryResponse === true){ 
-//   words.push(word.toUpperCase());
-//       setWords(words);
-//       setPoints(countPoints(words))
-//     }}
-//     setWord('')
-
+    setWord('')}
 
   return <>
   <div id="main">

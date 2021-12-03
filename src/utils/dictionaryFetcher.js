@@ -2,7 +2,7 @@
 import {key} from '../private/key'
 
 
-export const fetchWord = (word) => {
+const fetchWord = (word) => {
   
     
    return fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`)

@@ -1,17 +1,31 @@
 
+//given string, and board as array of arrays,
+//returns array of arrays representing paths containing string
+//each array in result is itself made up of [x,y] coordinate arrays
+
 function stringPaths(string, board){
-    board = board.map(row => row.map(x => {if(x==='Qu'){return 'Q'}
-else{return x}}));
+    //dealing with 'Q' edge case
+    //for display purposes, board has 'Qu'
+    //for wordsearch purposes, convert it to Q
+    board = board.map(row => row.map(x => {if(x==='Qu'){
+        return 'Q'}
+        else{return x}}));
+    //NB: when we call stringPaths in App.js,
+    // it's on string.toUpperCase()
+    //so we can assume uppercase input: 
     string = string.replace('QU','Q');
     let results = []
        if(string.length===1){
-        //find letter going row by row,
-        //replacing the letters we've already found with 0:
-        for(let rowIndex=0; rowIndex<4;rowIndex++){ 
-            const letter = string
-            let stringIndex = 0
-            let modifiedRow = board[rowIndex]
-            while(stringIndex !== -1){
+           //next step: isn't there a cleaner method for this?
+           //but first: commit changes
+            //we find the letter going row by row,
+            //replacing the letters we've already found with 0:
+            for(let rowIndex=0; rowIndex<4;rowIndex++){ 
+            //just so we remember we're looking for a single letter:
+                const letter = string
+                let stringIndex = 0
+                let modifiedRow = board[rowIndex]
+                while(stringIndex !== -1){
                stringIndex = modifiedRow.findIndex(x => x===letter);
                 if(stringIndex !==-1){
                 results.push([[rowIndex,stringIndex]])}
