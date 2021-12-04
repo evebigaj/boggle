@@ -16,7 +16,7 @@ If all goes well, it shows up on the sidebar and increases your score. All *shou
 
 ## Technologies
 
-Given the way the board is built up of tile commponents, and the way that, e.g., the entered word needs to be passed on to the found word list and the score counter, React was an obvious choice. To check whether found words are in the dictionary, I used the [Merriam-Webster API](https://dictionaryapi.com/products/api-collegiate-dictionary). 
+Given the way the board is built up of tile components, and the way that, e.g., the entered word needs to be passed on to the found word list and the score counter, React was an obvious choice. To check whether found words are in the dictionary, I used the [Merriam-Webster API](https://dictionaryapi.com/products/api-collegiate-dictionary). 
 
 ## Limitations
 * This is definitely not a phone app. I didn't even bother with responsive design because the gameplay on a phone would suck anyway.
